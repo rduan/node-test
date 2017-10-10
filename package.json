@@ -15,6 +15,7 @@
     "chai-spies": "^0.7.1",
     "chai-spies-next": "^0.9.3",
     "mocha": "^4.0.1",
+    "rewire": "^2.5.2",
     "supertest": "^3.0.0"
   },
   "dependencies": {
