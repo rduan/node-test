@@ -6,7 +6,7 @@ const app = require('./server').app;
 
 describe('node server',()=>{
 
-    it('should return hhh loo', (done)=>{
+    it('should return user object', (done)=>{
         request(app)
             .get('/')
             .expect(200)
@@ -25,8 +25,15 @@ describe('node server',()=>{
             .get('/users')
             .expect(200)
             .expect((res)=>{
-                expect(res.body).to
+                expect(res.body).to.be.an('array');
+                expect(res.body).to.be.an('array').that.to.deep.include(
+                    {
+                        name: 'Mike',
+                        age: 26
+                    }
+            );
             })
+            .end(done);
         
     })
 });

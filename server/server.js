@@ -9,21 +9,24 @@ app.get('/', (req, res)=>{
 });
 
 app.get('/users',(req,res)=>{
-    res.send([{
-        name: 'Mike',
-        age: 26
-    },{
-        name: 'Jane',
-        age: 27
-    },
-    {
-        name: 'Mokong',
-        age: 29
-    }
-])
-})
+    res.send([
+        {
+            name: 'Mike',
+            age: 26
+        },
+        {
+            name: 'Jane',
+            age: 27
+        },
+        {
+            name: 'Mokong',
+            age: 29
+        }
+    ]);
+});
 
-app.listen(3000);
-//app.listen(3000, ' server on 3000');
+app.listen(3000, ()=>{
+    console.log('server on 3000');
+});
 
 module.exports.app = app;
